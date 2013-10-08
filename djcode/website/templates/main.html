@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block body_content %}
+  <!--图片展示-->  
+<div class='row'>    
+  <div id="carousel-example-generic" class="carousel slide">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" style='height:300px'>
+    <div class="item active">
+      <img  style='width:100%' src="/images/1.jpg" alt="...">
+      <div class="carousel-caption">
+      </div>
+    </div>
+    <div class='item'>
+      <img style='width:100%' src="/images/2.jpg" alt="">
+      <!--div class="carousel-caption" style='font-size:17px;color:#428BCA;margin:0px 20px 100px 0px'>
+        <p>新闻内容</p>
+	<p>项目内容</p> 
+      </div-->
+    </div>
+  </div>
+  <!-- Controls -->
+  <div class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </div>
+  <div class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </div>
+</div>
+  <!--新闻内容-->
+<div class='row news_form'>
+  <div class='col-md-12'>
+      <div class="panel panel-default">
+      <!-- Default panel contents -->
+        <div class="panel-heading">新闻列表</div>
+        <div class="panel-body">
+          <div class="row">
+  	    <div class="col-md-3">
+       	      <div class="thumbnail">
+                <img src="/images/cloud.jpg" alt="...">
+                <div class="caption">
+                  <h4>云计算</h4>
+                  <p>云计算作为一种动态、可伸缩、资源虚拟化的计算模式，为我们提供了IaaS、PaaS和SaaS三中不同的服务</p>
+                  <p><a href="#" class="btn btn-primary" role="button">查看新闻</a>
+  		</div>
+              </div>
+            </div>
+	    <div class="col-md-3">
+              <div class="thumbnail">
+                <img src="/images/storage.jpg" alt="...">
+                <div class="caption">
+                  <h4>存储</h4>
+                  <p>提供固态硬盘、磁盘阵列、网络存储系统、备份与恢复、存储虚拟化和云存储等存储技术的最新发展动态</p>
+                  <p><a href="#" class="btn btn-primary" role="button">查看新闻</a> 
+                </div>
+              </div>
+            </div>
+	    <div class="col-md-3">
+              <div class="thumbnail">
+                <img src="/images/software_test.jpg" alt="...">
+                <div class="caption">
+                  <h4>软件测试</h4>
+                  <p>自动化测试日趋成熟，测试工具层出不穷，测试理论的不断完善，测试市场的不断膨胀，推动着软件测试行业不断提升</p>
+                  <p><a href="#" class="btn btn-primary" role="button">查看新闻</a>
+                </div>
+              </div>
+            </div>
+	    <div class="col-md-3">
+              <div class="thumbnail">
+                <img src="/images/bigdata.jpg" alt="...">
+                <div class="caption">
+                  <h4>大数据</h4>
+                  <p>云计算提供了基础设施，依托云计算的强大力量，可以实现海量数据的实时分析和挖掘，实现数据的隐藏价值</p>
+                  <p><a href="#" class="btn btn-primary" role="button">查看新闻</a>
+                </div>
+              </div>
+            </div>
+	  </div>  
+        </div>
+        </div>
+      </div>
+  </div>	
+
+  <!--项目内容-->
+<div class='row news_form'>                                                   
+  <div class='col-md-12'>                                      
+      <div class="panel panel-default">                                       
+      <!-- Default panel contents -->
+        <div class="panel-heading">项目列表</div>                             
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="thumbnail" style='background-color:#fffbf0'>
+                <img src="/images/big-data-cloud.png" alt="...">
+                <div class="caption">
+                  <h4>大数据和云计算项目</h4>
+                  <p>构建数据仓库<br>海量数据分析与挖掘<br>数据中心解决方案</p>
+                  <p><a href="#" class="btn btn-primary" role="button">查看项目</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail" style='background-color:#fffbf0'>
+                <img src="/images/storage-test.png" alt="...">
+                <div class="caption">
+                  <h4>存储测试</h4>
+                  <p>磁盘阵列测试<br>网络存储系统测试<br>信息系统测试</p>
+                  <p><a href="#" class="btn btn-primary" role="button">查看项目</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail" style='background-color:#fffbf0'>
+                <img src="/images/Software.png" alt="...">
+                <div class="caption">
+                  <h4>软件研发</h4>
+                  <p>企业宣传网站<br>企业信息管理系统<br>企业数据管理平台</p>
+                  <p><a href="#" class="btn btn-primary" role="button">查看项目</a>
+                </div>
+              </div>
+            </div>
+	    <div class="col-md-3">
+              <div class="thumbnail" style='background-color:#fffbf0'>
+                <img src="/images/Software-Test.jpg" alt="...">
+                <div class="caption">
+                  <h4>软件测试项目</h4>
+                  <p>软件标准符合性测试<br>项目验收测试<br>软件产品测试</p>
+                  <p><a href="#" class="btn btn-primary" role="button">查看项目</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+  </div>
+
+{% endblock %}
