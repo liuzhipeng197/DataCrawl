@@ -1,8 +1,8 @@
 from django.contrib import admin
-from project.models import KeyWord
-from project.models import ContentUrl
-from project.models import Info
-from project.models import Comment
+from entity.project.models import KeyWord
+from entity.project.models import ContentUrl
+from entity.project.models import Info
+from entity.project.models import Comment
 
 admin.site.register(Info)
 admin.site.register(KeyWord)

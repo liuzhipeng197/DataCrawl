@@ -1,6 +1,6 @@
-from news.models import Info
-from news.models import KeyWord
-from news.models import ContentUrl
+from entity.news.models import Info
+from entity.news.models import KeyWord
+from entity.news.models import ContentUrl
 from django.contrib import admin
 
 admin.site.register(Info)

@@ -9,7 +9,7 @@ class ContentUrl(models.Model):
 
 class Info(models.Model):
 	NewsTitle = models.CharField(max_length = 30)
-	NewsDate = models.DateTimeField()
+	NewsDate = models.CharField(max_length =20)
 	NewsContent = models.TextField()
 	NewsSource = models.CharField(max_length = 50)
 

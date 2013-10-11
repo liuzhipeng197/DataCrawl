@@ -2,6 +2,7 @@
 
 {% block body_content %}
   <!--新闻展示-->
+  {% for news in newslist %}
   <div class='row news_form'>
     <div class='col-md-10'>
       <div class='row news_show'>
@@ -9,14 +10,14 @@
 	  <img src='/images/sina.png'></img>
         </div>
 	<div class='col-md-10 news_show_content'>
-	  <a src=''>
-	      小米应用商店全线下架360产品
+	  <a href='/news/{{news.id}}/'>
+	    {{news.NewsTitle}}  
 	  </a>
 	  <p>
-	    小米公司今日宣布，小米应用商店全线下架 360 产品，因其恶意诱导用户，根据其官方微博描述，9月26日22点，大量网友举报360手机助手在没有给出任何理由的情况下，建议用户卸载小米应用商店、百度地图等应用。
+            {{news.NewsContent|slice:":150"}}......
 	  </p>
 	  <p class='news_show_time'>
-	    32分钟前&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>来自，  新浪科技</span>
+	    {{news.NewsDate}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>来自，  {{news.NewsSource}}</span>
 	  </p>
         </div>
       </div> 
@@ -26,9 +27,31 @@
     <div class='col-md-9 col-md-offset-1 news_show_line'>
     </div>
   </div>
-  
+  {% endfor %}
+ <div class='row'>
+   <div class='col-md-6 col-md-offset-4'>
+     <div class="pagination">
+	    <span class="step-links">
+		{% if newslist.has_previous %}
+		    <a href="?page={{ newslist.previous_page_number }}"><前页</a>
+		{% endif %}
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="current">
+		    {{ newslist.number }}
+		</span>
+		<span>
+		    &nbsp;&nbsp;of&nbsp;&nbsp;{{ newslist.paginator.num_pages }}
+		</span>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		{% if newslist.has_next %}
+		    <a href="?page={{ newslist.next_page_number }}">后页></a>
+		{% endif %}
+	    </span>
+    </div>
+  </div>
+</div>   
 
-  <!--新闻展示-->
+  <!--新闻展示>
   <div class='row news_form'>
     <div class='col-md-10'>
       <div class='row news_show'>
@@ -52,6 +75,6 @@
   <div class='row news_form'>
     <div class='col-md-9 news_show_line'>
     </div>
-  </div>  
+  </div-->  
 
 {% endblock %}

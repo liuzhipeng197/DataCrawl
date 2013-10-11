@@ -20,6 +20,9 @@ urlpatterns = patterns('',
 		#使用管理界面
 		(r'^admin/', include(admin.site.urls)),
 
+		#显示具体的新闻
+		(r'^news/(\d+)/$', views.news),
+
 		#新闻界面
 		(r'^listnews/$', views.listnews),
 		
@@ -27,16 +30,16 @@ urlpatterns = patterns('',
 		(r'^base/', views.base),
 		
 		#使用bootstrap.css
-    		(r'^css/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/liuzp/DataCrawl/djcode/website/css/bootstrap/css/'}),
+    		(r'^css/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/css/bootstrap/css/'}),
 	
 		#使用bootstrap.js
-		(r'^js/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/liuzp/DataCrawl/djcode/website/css/bootstrap/js/'}),
+		(r'^js/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/css/bootstrap/js/'}),
 
 		#使用图片
-		( r'^images/(?P<path>.*)$', 'django.views.static.serve',{'document_root': '/liuzp/DataCrawl/djcode/website/images/' }),
+		( r'^images/(?P<path>.*)$', 'django.views.static.serve',{'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/images/' }),
 
 		#使用fonts中的小图标
-             	(r'^fonts/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/liuzp/DataCrawl/djcode/website/css/bootstrap/fonts/'}),
+             	(r'^fonts/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/css/bootstrap/fonts/'}),
     # Examples:
     # url(r'^$', 'website.views.home', name='home'),
     # url(r'^website/', include('website.foo.urls')),

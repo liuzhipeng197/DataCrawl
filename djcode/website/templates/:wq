@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block body_content  %}
+<div class='news_example_form'>
+	<div>
+		{{news.NewsTitle}}
+	</div>
+	<div>
+		{{news.NewsContent}}
+	</div>	
+</div>
+{% endblock %}

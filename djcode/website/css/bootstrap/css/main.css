@@ -78,6 +78,7 @@
     margin-bottom:10px;
 }
 
+.pagination a:hover,
 .news_show_content >a:hover {
     background-color:#428BCA;
     color:#FFFFFF;
@@ -99,4 +100,48 @@
 .mynavigation .mynavigation_link {
     margin:5px 0px 0px 0px;
     font-size:14px;
+}
+
+.example_form {
+    border-style:solid solid solid solid;
+    border-color:#cccccc;
+    border-width:1px;
+    margin:10px 400px 50px 180px;
+    padding:0px 20px 0px 20px;
+}
+
+.example_content {
+    font-family:Times News Roman;
+    text-indent:0px;
+    white-space:pre-line;
+    font-size:14px;
+    margin:0px 0px 0px 0px;
+    background-color:white;
+    border-style:none none none none;
+}
+
+.example_title {
+    font-size:16px;
+    color:#009966;
+    margin:30px 0px 0px 10px;
+}
+
+.example_date {
+    font-size:12px;
+    background-color:#ffffff;
+    padding:2px 5px 2px 5px;
+    margin:10px 0px 10px 8px;
+    color:#428BCA; 
+}
+
+.pagination {
+    font-size:14px;
+    text-align:center;
+    margin:0px 0px 20px 0px;
+}
+
+.current {
+    color:white;
+    padding:1px 0px 1px 3px;
+    background-color:#009966;
 }

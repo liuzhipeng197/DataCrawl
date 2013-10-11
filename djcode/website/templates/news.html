@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body_content %}
+<link href="/css/main.css" rel='stylesheet' type='text/css' /> 
+   <div class='example_form'>
+	<div class='example_title'>
+		{{news.NewsTitle}}
+	</div>
+	<p class='example_date'>
+		{{news.NewsDate}}&nbsp;&nbsp;&nbsp;&nbsp;来自&nbsp;&nbsp;&nbsp;&nbsp;{{news.NewsSource}}
+	</p>
+	<pre class='example_content'>
+		{{news.NewsContent}}
+	</pre>	
+    </div>
+{% endblock %}
