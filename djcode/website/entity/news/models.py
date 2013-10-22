@@ -12,4 +12,4 @@ class Info(models.Model):
 	NewsDate = models.CharField(max_length =20)
 	NewsContent = models.TextField()
 	NewsSource = models.CharField(max_length = 50)
-
+	NewsLogo = models.CharField(max_length = 20)

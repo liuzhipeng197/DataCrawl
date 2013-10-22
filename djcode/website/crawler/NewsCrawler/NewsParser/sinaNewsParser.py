@@ -54,7 +54,7 @@ def sinaNewsParser(soup,url,now_time):
     	news['pubdate'] = pubdate
     	news['content'] = newscontents
 	news['source'] = '新浪科技'
-    
+   	news["logo"] = 'sina' 
     	return news
     
 if __name__ == "__main__":

@@ -1,0 +1,22 @@
+#!/bin/bash
+#基本的参数配置
+#备份文件存放路径
+backup_target_dir=/backup/db
+backup_compression_dir=/backup/compressiondb
+db=datacrawldb
+
+
+#复制数据库文件
+scp -r /var/lib/mysql/$db root@hadoop00:$backup_target_dir
+
+#将文件压缩
+DATE=$(date +%Y%m%d)
+ssh hadoop00 cd $backup_target_dir
+ssh hadoop00 tar -zcvf $backup_compression_dir/$db$DATE.tar.gz $backup_target_dir/$db
+
+#删除源文件
+ssh hadoop00 rm -rf $backup_target_dir/$db/
+
+#删除10天前的压缩数据
+ccDATE=$(date "-d 10 day ago" +%Y%m%d)
+ssh hadoop00 rm -rf $backup_compression_dir/$db$ccDATE.tar.gz

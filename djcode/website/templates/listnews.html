@@ -1,13 +1,18 @@
 {% extends "base.html" %}
 
 {% block body_content %}
+  <div class='row news_form'>                                                                                                                                 
+    <div class='col-md-10'> 
+  	<div class='my_title'><span class="glyphicon glyphicon-th"></span>&nbsp;&nbsp;{{my_title}}</div>
+    </div>
+  </div>
   <!--新闻展示-->
   {% for news in newslist %}
   <div class='row news_form'>
     <div class='col-md-10'>
       <div class='row news_show'>
 	<div class='col-md-2 news_show_image'>
-	  <img src='/images/sina.png'></img>
+	  <img src='/images/{{news.NewsLogo}}.png'></img>
         </div>
 	<div class='col-md-10 news_show_content'>
 	  <a href='/news/{{news.id}}/'>

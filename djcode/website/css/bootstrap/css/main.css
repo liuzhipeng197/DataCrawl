@@ -145,3 +145,10 @@
     padding:1px 0px 1px 3px;
     background-color:#009966;
 }
+
+.my_title {
+    color:#0033CC;
+    font-size:16px;
+    margin:0px 50px 10px 15px;
+    padding:0px 20px 0px 0px;
+}

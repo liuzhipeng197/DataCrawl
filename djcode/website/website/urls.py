@@ -24,7 +24,7 @@ urlpatterns = patterns('',
 		(r'^news/(\d+)/$', views.news),
 
 		#新闻界面
-		(r'^listnews/$', views.listnews),
+		(r'^listnews/(.+)/$', views.listnews),
 		
 		#基本信息
 		(r'^base/', views.base),
@@ -36,7 +36,7 @@ urlpatterns = patterns('',
 		(r'^js/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/css/bootstrap/js/'}),
 
 		#使用图片
-		( r'^images/(?P<path>.*)$', 'django.views.static.serve',{'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/images/' }),
+		(r'^images/(?P<path>.*)$', 'django.views.static.serve',{'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/images/' }),
 
 		#使用fonts中的小图标
              	(r'^fonts/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/css/bootstrap/fonts/'}),

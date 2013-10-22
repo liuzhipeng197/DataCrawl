@@ -7,6 +7,7 @@ from entity.users.models import User
 from entity.news.models import Info
 from entity.news.views import getAllNews
 from entity.news.views import getNewsById
+from entity.news.views import getNewsByTitle
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import login,logout
 import datetime
@@ -39,8 +40,13 @@ def main(request):
 
 
 @login_required(login_url='/accounts/login')
-def listnews(request):
-	newslist = getAllNews()
+def listnews(request, offset):
+	if offset =='all':
+		newslist = getAllNews()
+		my_title = "新闻列表"
+	else:
+		newslist = getNewsByTitle(offset)
+		my_title = offset
 	#Pagination"Show 25 examples per page"
 	paginator = Paginator(newslist,10)
 	#Make sure page request is an int.If not,deliver first page.
@@ -55,7 +61,7 @@ def listnews(request):
 	except(EmptyPage, InvalidPage):
 		newslist = paginator.page(paginator.num_pages)
 		
-	return render_to_response("listnews.html",{'newslist':newslist})
+	return render_to_response("listnews.html",{'newslist':newslist,'my_title':my_title})
 
 @login_required(login_url='/accounts/login')
 def news(request, offset):

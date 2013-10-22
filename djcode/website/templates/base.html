@@ -45,22 +45,26 @@
         <a><img src='/images/logo_1.png'/></a>
       </div>
       <div class='col-md-3 mynavigation_search'>
+	<form role="form" action="/listnews/" method='post'> 
 	<div class='controls'>
           <div class='input-group'>
 	    <input class='form-control' id='inputIcon' type='text' style='border-style:solid none solid solid;border-color:#563d7c;border-width:2px;'placeholder='云计算'>
 	    <p class='input-group-addon'><span class='glyphicon glyphicon-search'></span></p>
 	  </div>
         </div>
+	</form>
       </div>
       <div class='col-md-6 mynavigation_link'>
         <ul class="nav nav-pills">
           <li><a href="/main">首页</a></li>
           <li class='dropdown'>
-	    <a class='dropdown-toggle' data-toggle="dropdown" href="listnews.html">新闻<b class='caret'></b></a>
+	    <a class='dropdown-toggle' data-toggle="dropdown" href="/listnews/all">新闻<b class='caret'></b></a>
             <ul class='dropdown-menu'>
-              <li><a href='/listnews'>云计算</a></li>
-	      <li><a href=''>存储</a></li>
-              <li><a href=''>软件测试</a></li>
+	      <li><a href='/listnews/all'>所有新闻</a></li>
+              <li><a href='/listnews/云计算'>云计算</a></li>
+	      <li><a href='/listnews/存储'>存储</a></li>
+              <li><a href='/listnews/测试'>软件测试</a></li>
+	      <li><a href='/listnews/大数据'>大数据</a></li>
             </ul>
 	  </li>
 	  <li class='dropdown'>
