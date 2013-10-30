@@ -1,8 +1,7 @@
 #encoding=utf-8
 import xml.etree.ElementTree as ET
-from UrlCrawler.sinaurlcrawler import SinaUrlParser
-from UrlCrawler.chinabyteurlcrawler import ChinabyteUrlParser 
-from myfactory import MyFactory
+from UrlCrawler.urlcrawler import UrlParser
+
 #新建xml文件
 def buildNewsXmlFile():
 	#设置一个新节点，并设置其标签为root
@@ -33,12 +32,17 @@ def parseAllTags(xml_name):
 	#输入root的所有子节点
 	for child in root:
 		print child.tag
+		'''
 		mf = MyFactory(child.tag)
 		element = mf.createElement()
 		for sub_tag in child:
 			urls.append(sub_tag.text)
 		element.test(urls)
-
+		'''
+		element = UrlParser(child.tag)
+		for sub_tag in child:
+			urls.append(sub_tag.text)
+		element.test(urls)
 #解析Xml文件中指定tag的节点
 def parseXmlFile(xml_name, tag):
 	#将XMl文件加载并返回一个ELementTree对象
@@ -83,5 +87,5 @@ def editXmlFile(xml_name, tag, url):
 	
 if __name__ == "__main__":
 	#buildNewsXmlFile()
-	parseXmlFile("urls.xml", "sina")
-	parseAllTags("urlfile.xml")
+	#parseXmlFile("urls.xml", "sina")
+	parseAllTags("/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/NewsCrawler/urlfile.xml")

@@ -112,7 +112,8 @@ import os.path
 
 TEMPLATE_DIRS = (
     '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/templates',
-    '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/css/bootstrap',
+    '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/css',
+    
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

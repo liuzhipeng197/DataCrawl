@@ -1,0 +1,94 @@
+{% extends "base.html"%}
+
+{% block body_content %}
+  <div class='row search_form'>
+    <div class='col-md-10'>
+    	<div class='search_result'>
+		{% ifequal type "news"%}
+			<div class='my_title'><span class="glyphicon glyphicon-th"></span>&nbsp;&nbsp;新闻检索结果</div>
+		{% else %}{% ifequal type "project" %}
+			<div class='my_title'><span class="glyphicon glyphicon-th"></span>&nbsp;&nbsp;项目检索结果</div>
+		{% endifequal %}{% endifequal %}
+    	</div>
+    </div>
+   </div>
+	{% ifequal type "news" %}
+	    {% for news in list %}
+		  <div class='row news_form'>
+		    <div class='col-md-10'>
+		      <div class='row news_show'>
+			<div class='col-md-2 news_show_image'>
+			  <img src='/images/{{news.NewsLogo}}.png'></img>
+			</div>
+			<div class='col-md-10 news_show_content'>
+			  <a href='/news/{{news.id}}/'>                                        
+			    {{news.NewsTitle}}                                                 
+			  </a>                                                                 
+			  <p>                                                                  
+			    {{news.NewsContent|slice:":150"}}......                            
+			  </p>                                                                 
+			  <p class='news_show_time'>                                           
+			    {{news.NewsDate}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>来自，  {{news.NewsSource}}</span>
+			  </p>
+			</div>                                                                 
+		      </div> 
+		    </div>
+		  </div>
+		  <div class='row news_form'>                                                  
+		    <div class='col-md-9 col-md-offset-1 news_show_line'>                      
+		    </div>
+		  </div>
+	    {% endfor %}
+	{% else %}{% ifequal type "project" %}
+	  <!--新闻展示-->                                                              
+	  {% for project in list %}                                             
+	  <div class='row news_form'>                                                  
+	    <div class='col-md-10'>
+	      <div class='row news_show'>                                              
+		<div class='col-md-2 news_show_image'>                                 
+		  <img src='/images/{{project.ProjectLogo}}.png'></img>                
+		</div>
+		<div class='col-md-10 news_show_content'>
+		  <a href='/project/{{project.id}}/'>                                  
+		    {{project.ProjectTitle}}  
+		  </a>
+		  <p>
+		    {{project.ProjectContent|cut:'&nbsp;'|slice:":150"}}......         
+		  </p>                                                                 
+		  <p class='news_show_time'>
+		    {{project.ProjectDate}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>来自，  {{project.ProjectSource}}</span>
+		  </p>
+		</div>
+	      </div> 
+	    </div>
+	  </div>	
+	 </div>
+	<div class='row news_form'>
+        	<div class='col-md-9 col-md-offset-1 news_show_line'>
+               	</div>
+       	</div>
+	 {% endfor %}
+	 {% endifequal %}{% endifequal %}
+	 <div class='row'>
+		<div class='col-md-6 col-md-offset-4'>                                                                                                        
+                        <div class="pagination">                                                                                                              
+                            <span class="step-links">                                                                                                         
+                                {% if list.has_previous %}                                                                                                    
+                                    <a href="{{request.get_full_path}}&page={{ list.previous_page_number }}"><前页</a>                                                                 
+                                {% endif %}                                                                                                                   
+                                &nbsp;&nbsp;&nbsp;&nbsp;                                                                                                      
+                                <span class="current">                                                                                                        
+                                    {{ list.number }}                                                                                                         
+                                </span>                                                                                                                       
+                                <span>                                                                                                                        
+                                    &nbsp;&nbsp;of&nbsp;&nbsp;{{ list.paginator.num_pages }}                                                                    
+                                </span>                                                                                                                       
+                                &nbsp;&nbsp;&nbsp;&nbsp;                                                                                                      
+                                {% if list.has_next %}                                                                                                        
+                                    <a href="{{request.get_full_path}}&page={{ list.next_page_number }}">后页></a>                                                                     
+                                {% endif %}                                                                                                                   
+                            </span>                                                                                                                           
+                        </div>                                                                                                                                
+               </div>                                                                                                                                        
+        </div>
+{% endblock %}

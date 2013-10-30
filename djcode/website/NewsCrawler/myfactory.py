@@ -1,6 +1,6 @@
 #encoding=utf-8
-from UrlCrawler.sinaurlcrawler import SinaUrlParser as SUP
-from UrlCrawler.chinabyteurlcrawler import ChinabyteUrlParser as CUP
+from NewsParser.chinabyteNewsParser import chinabyteNewsParser as CNP
+from NewsParser.sinaNewsParser import sinaNewsParser as SNP
 
 class MyFactory():
 	#初始化对象
@@ -16,6 +16,15 @@ class MyFactory():
 			return CUP()
 		else:
 			print "error"
+
+	def createNewsParser(self):
+		if self.classname == "sina":
+			return SNP()
+		elif self.classname == "chinabyte":
+			return CNP()
+		else:
+			print "error"
+
 	
 if __name__ == '__main__':
 	mf = MyFactory('chinabyte')

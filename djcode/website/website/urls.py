@@ -23,17 +23,41 @@ urlpatterns = patterns('',
 		#显示具体的新闻
 		(r'^news/(\d+)/$', views.news),
 
+		#信息检索
+		(r'^search/$', views.search),		
+
+		#信息检索结果
+		(r'^search_result/$', views.search_result),		
+
+		#数据统计与分析
+		(r'^statistics/$', views.statistics),
+		
+		#显示例子
+		(r'^example/$',views.example),		
+
 		#新闻界面
 		(r'^listnews/(.+)/$', views.listnews),
 		
+		#项目界面
+		(r'^listproject/(.+)/$',views.listproject),
+
+		#显示具体的项目
+		(r'^project/(.+)/$',views.project),
+		
 		#基本信息
 		(r'^base/', views.base),
-		
+	
+		#使用bootstrap-datepicker.css             
+                (r'^bootstrap-datetimepicker/css/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/css/bootstrap-datetimepicker/css/'}),
+
+		#使用bootstrap-datepicker.js 
+                (r'^bootstrap-datetimepicker/js/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/css/bootstrap-datetimepicker/js/'}), 		
+	
 		#使用bootstrap.css
-    		(r'^css/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/css/bootstrap/css/'}),
+    		(r'^bootstrap/css/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/css/bootstrap/css/'}),
 	
 		#使用bootstrap.js
-		(r'^js/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/css/bootstrap/js/'}),
+		(r'^bootstrap/js/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/css/bootstrap/js/'}),
 
 		#使用图片
 		(r'^images/(?P<path>.*)$', 'django.views.static.serve',{'document_root': '/liuzp/NSTC_DataCrawl/DataCrawl/djcode/website/images/' }),

@@ -1,0 +1,55 @@
+{% extends "base.html"%}
+
+{% block body_content %}
+  <div class='row search_form'>
+    <div class='col-md-10'>
+	<div class='my_title'><span class="glyphicon glyphicon-th"></span>&nbsp;&nbsp;高级检索</div>
+	<div class='query_form'>
+		<form class='form-horizontal' role="search" action='/search_result'  method='get'>
+		  <div class="form-group">
+                    <label class='col-sm-2 control-label' style='font-size:14px;color:#009966'>检索内容</label>
+                    <div class='col-sm-4'>
+			<label class="radio-inline">
+  				<input type="radio" id="inlineRadio1" name="optionsRadios" value="option1" checked>新闻
+			</label>
+			<label class="radio-inline">
+                      		<input type="radio" id='inlineRadio2' name="optionsRadios" value='option2'>项目
+			</label>
+                    </div>
+                  </div>
+		  <div class="form-group">
+		    <label class='col-sm-2 control-label' style='font-size:14px;color:#009966'>关键字</label>
+		    <div class='col-sm-4'>
+		      <input type="text" name='keyword' id='keyword' class="form-control" placeholder="关键字">
+		    </div>
+		  </div>
+		  <div class="form-group">                                             
+		    <label class='col-sm-2 control-label' style='font-size:14px;color:#009966'>来源</label>               
+		    <div class='col-sm-4'>                                             
+		      <input type="text" name='source' id='source' class="form-control" placeholder="来源"> 
+		    </div>
+		  </div>
+		  <div class="form-group">                                             
+		    <label class='col-sm-2 control-label' style='font-size:14px;color:#009966'>时间</label>               
+		    <div class='col-sm-3'>                                             
+		      <input type="text" class='form-control' value="2013-10-01 00:00" name='datetimepicker' id="datetimepicker" data-date-format="yyyy-mm-dd hh:mm">
+			<script>
+				$('#datetimepicker').datetimepicker({
+					autoclose:true
+					});
+			</script>
+		      <span>&nbsp;至</span>
+		      <input type="text" class='form-control' value="2013-10-30 00:00" name='datetimepicker1' id="datetimepicker1" data-date-format="yyyy-mm-dd hh:mm">
+			<script>
+				$('#datetimepicker1').datetimepicker({
+					autoclose:true
+					});
+			</script>
+		    </div>
+	  	  </div>
+	  	  <div class="submit_form">
+            		<button type="submit" class="btn btn-primary">确定</button>
+	  	  </div>
+		</form>
+    </div>
+{% endblock %}

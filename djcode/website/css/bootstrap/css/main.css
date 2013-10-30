@@ -106,7 +106,7 @@
     border-style:solid solid solid solid;
     border-color:#cccccc;
     border-width:1px;
-    margin:10px 400px 50px 180px;
+    margin:2px 400px 10px 180px;
     padding:0px 20px 0px 20px;
 }
 
@@ -147,8 +147,42 @@
 }
 
 .my_title {
-    color:#0033CC;
+    color:#428BCA;
     font-size:16px;
     margin:0px 50px 10px 15px;
     padding:0px 20px 0px 0px;
+}
+
+.my_breadcrumb {
+    margin:10px 410px 0px 195px;
+    text-decoration:none;    
+    cursor:pointer;
+}
+
+.my_thumbnail {
+    width:17%;
+    margin:0px 12px 0px 12px;
+    float:left;
+}
+
+.search_form {
+    margin:10px 150px 20px 150px; 
+}
+.search_logo {
+    font-size:16px;
+    color:#428BCA;
+    margin:0px 0px 0px 15px;
+}
+
+.submit_form {
+    margin:0px 0px 20px 70px;
+}
+
+.query_form {
+    border-style:none none none none;
+    border-color:#563d7c;
+    border-width:2px;
+    padding:20px 0px 10px 0px;
+    margin:10px 0px 10px 15px;
+    background:#f0f0f4;
 }

@@ -1,10 +1,12 @@
 <!DOCTYPE HTML>
 <html lang='zh-CN'>
-<link href="/css/bootstrap.css" rel="stylesheet" type='text/css' />
-<link href="/css/main.css" rel='stylesheet' type='text/css' />
-<link href='/css/docs.css' rel='stylesheet' type='text/css' />
-<script src='/js/jquery.js'></script>
-<script src='/js/bootstrap.js'></script>
+<link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type='text/css' />
+<link href="/bootstrap/css/main.css" rel='stylesheet' type='text/css' />
+<link href='/bootstrap/css/docs.css' rel='stylesheet' type='text/css' />
+<link href="/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" rel='stylesheet' type='text/css' />
+<script src='/bootstrap/js/jquery.js'></script>
+<script src='/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js'></script>
+<script src='/bootstrap/js/bootstrap.js'></script>
 <body>
   <!--导航条-->
   <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
@@ -16,7 +18,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="../" class="navbar-brand">欢迎来到数据抓取平台</a>
+      <a href="/main" class="navbar-brand">欢迎来到数据抓取平台</a>
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav navbar-left" style='margin-left:50px'>
@@ -29,7 +31,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right" style='margin-left:50px'>
         <li>
-          <a href="/login">登陆</a>
+          <a href="/accounts/login">登陆</a>
         </li>
         <li>
           <a href="../css">注册</a>
@@ -48,7 +50,7 @@
 	<form role="form" action="/listnews/" method='post'> 
 	<div class='controls'>
           <div class='input-group'>
-	    <input class='form-control' id='inputIcon' type='text' style='border-style:solid none solid solid;border-color:#563d7c;border-width:2px;'placeholder='云计算'>
+	    <input class='form-control' name='inputCondition' id='inputIcon' type='text' style='border-style:solid none solid solid;border-color:#563d7c;border-width:2px;'placeholder='云计算'>
 	    <p class='input-group-addon'><span class='glyphicon glyphicon-search'></span></p>
 	  </div>
         </div>
@@ -61,22 +63,26 @@
 	    <a class='dropdown-toggle' data-toggle="dropdown" href="/listnews/all">新闻<b class='caret'></b></a>
             <ul class='dropdown-menu'>
 	      <li><a href='/listnews/all'>所有新闻</a></li>
-              <li><a href='/listnews/云计算'>云计算</a></li>
-	      <li><a href='/listnews/存储'>存储</a></li>
-              <li><a href='/listnews/测试'>软件测试</a></li>
-	      <li><a href='/listnews/大数据'>大数据</a></li>
+              <li><a href='/listnews/cloud'>云计算</a></li>
+	      <li><a href='/listnews/storage'>存储</a></li>
+              <li><a href='/listnews/test'>软件测试</a></li>
+	      <li><a href='/listnews/bigdata'>大数据</a></li>
+	      <li><a href='/listnews/datacenter'>数据中心</a></li>
             </ul>
 	  </li>
 	  <li class='dropdown'>
             <a class='dropdown-toggle' data-toggle="dropdown" href="listnews.html">项目<b class='caret'></b></a>
             <ul class='dropdown-menu'>
-              <li><a href=''>大数据与云计算</a></li>
-              <li><a href=''>存储测试</a></li>
-              <li><a href=''>软件测试</a></li>
+              <li><a href='/listproject/all'>所有项目</a></li>
+	      <li><a href='/listproject/bigdata'>大数据与云计算</a></li>
+              <li><a href='/listproject/storage'>存储</a></li>
+	      <li><a href='/listproject/softwaredevelop'>软件研发</a></li>
+              <li><a href='/listproject/test'>测试</a></li>
+	      <li><a href='/listproject/projectapply'>科研项目申请</a></li>
             </ul>
           </li>
-	  <li><a href='#'>信息检索</a></li>
-	  <li><a href='#'>信息统计与分析</a></li>
+	  <li><a href='/search'>信息检索</a></li>
+	  <li><a href='/statistics'>信息统计与分析</a></li>
         </ul>
       </div>
     </div>

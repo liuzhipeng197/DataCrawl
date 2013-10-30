@@ -6,20 +6,24 @@
 	<div class='my_breadcrumb'>
    		<ol class="breadcrumb" style='text-decoration:none'>
   			<li><a href="/main">首页</a></li>
-  			<li><a href="/listnews/{{news.NewsSort}}">{{news.NewsSort}}</a></li>
+  			<li><a href="/listproject/{{project.ProjectSort}}">{{project.ProjectSort}}</a></li>
   			<li class="active">正文</li>
   		 </ol>
 	</div>
    </div>
    <div class='example_form'>
 	<div class='example_title'>
-		{{news.NewsTitle}}
+		{{project.ProjectTitle}}
 	</div>
 	<p class='example_date'>
-		{{news.NewsDate}}&nbsp;&nbsp;&nbsp;&nbsp;来自&nbsp;&nbsp;&nbsp;&nbsp;{{news.NewsSource}}
+		{{project.ProjectDate}}&nbsp;&nbsp;&nbsp;&nbsp;来自&nbsp;&nbsp;&nbsp;&nbsp;{{project.ProjectSource}}
 	</p>
 	<pre class='example_content'>
-		{{news.NewsContent}}
+		{% if project.ProjectLogo = 'most'%}
+			{{content}}
+		{% else %}{% if project.ProjectLogo = 'nsfc' %}
+			{{ project.ProjectContent|cut:"&nbsp;"}}
+		{% endif %}{% endif %}
 	</pre>	
     </div>
 {% endblock %}
